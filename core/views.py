@@ -7,7 +7,8 @@ from .forms import FormArticle
 # Create your views here.
 
 def home(request):
-    return render(request, "index.html")
+    articles = Article.objects.all()
+    return render(request, "index.html", {'articles': articles})
 
 def addArticle(request):
     if request.method == "POST":

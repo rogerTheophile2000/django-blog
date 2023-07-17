@@ -1,20 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div>
-  Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-  Minus modi eveniet iusto ipsum, in autem sunt quaerat 
-  repellat illum et officia, porro repellendus dolores 
-  nulla excepturi quidem veritatis rem nam asperiores a 
-  voluptates fuga neque sit magni. Impedit optio, doloremque 
-  laboriosam corporis officiis sapiente sed necessitatibus fuga. 
-  Dolor esse repudiandae molestiae maiores magni ratione pariatur, 
-  voluptates eius! Laudantium, excepturi distinctio perferendis 
-  omnis neque voluptatum, minima praesentium voluptates ipsa expedita accusantium tempore. 
-  Ad, magni minus laboriosam dicta eos asperiores 
-  quod ea ut tempore amet tenetur alias ullam commodi 
-  repudiandae pariatur possimus itaque unde! Quis deleniti 
-  molestiae ea quaerat suscipit. Eos, ullam.
+<div class="row">
+  {% for article in articles %}
+    <div class="col-3">
+      <div class="card">
+        <div class="card-header">
+          {{ article.category }} | {{ article.created_at }}
+        </div>
+        <div class="card-body">
+          <div class="card-text">
+            <h1>{{ article.title }}</h1>
+          </div>
+          <div class="card-text">
+            {{ article.introduction }}
+          </div>
+          <div class="card-text p-3">
+            <a class="btn btn-outline-primary btn-sm" href="#">Voir l'article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+  
 </div>
 
 
