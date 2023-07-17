@@ -17,7 +17,9 @@ class Article(models.Model):
     paragraphe5 = models.TextField(blank=True, null=True)
     subtitle6 = models.CharField(max_length=200, blank=True, null=True)
     paragraphe6 = models.TextField(blank=True, null=True)
+    conclusiontile = models.CharField(max_length=200)
     conclusion = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

@@ -3,9 +3,84 @@
 {% block content %}
 
 <div class="pb-5">
+    <h1 class="text-center mb-4">Ajouter un nouvelle article</h1>
+    <div class="card p-4">
+        <div class="row">
+            <div class="col-4 text-center">
+                <h3 class=" text-center">Regles</h3>
+            </div>
+            <div class="col-8">
+                les paragraphe sont optionnels, on peut ecrire une article avec 1 a 6 paragraphes pour notre modèle.
+            </div>
+        </div>
+    </div>
   <form method="POST" enctype="multipart/form-data" class="card p-3 mt-5">
     {% csrf_token %}
-    {{ form | crispy}}
+    <div class="row m-3">
+        <div class="col-6">
+            {{ form.category| as_crispy_field }}
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-6">
+            <!-- introduction -->
+            {{ form.title| as_crispy_field }}
+            {{ form.introduction| as_crispy_field }}
+        </div>
+        <div class="col-6">
+            <!-- conclusion -->
+            {{ form.conclusiontile| as_crispy_field }}
+            {{ form.conclusion| as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <!-- paragraphe 1 -->
+        <div class="col-6">
+            {{ form.subtitle1| as_crispy_field }}
+            {{ form.paragraphe1| as_crispy_field }}
+        </div>
+        <!-- paragraphe 2 -->
+        <div class="col-6">
+            {{ form.subtitle2| as_crispy_field }}
+            {{ form.paragraphe2| as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <div class="col-6">
+            <!-- paragraphe 3 -->
+            {{ form.subtitle3| as_crispy_field }}
+            {{ form.paragraphe3| as_crispy_field }}
+        </div>
+        <div class="col-6">
+            <!-- paragraphe 4 -->
+            {{ form.subtitle4| as_crispy_field }}
+            {{ form.paragraphe4| as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="row m-3">
+        <!-- paragraphe 5 -->
+        <div class="col-6">
+            {{ form.subtitle5| as_crispy_field }}
+            {{ form.paragraphe5| as_crispy_field }}
+        </div>
+        <!-- paragraphe 6 -->
+        <div class="col-6">
+            {{ form.subtitle6| as_crispy_field }}
+            {{ form.paragraphe6| as_crispy_field }}
+        </div>
+    </div>
+
+    <div class="text-center m-4">
+        <button 
+            class="btn btn-outline-primary p-3" 
+            type="submit" 
+            style="width: 200px; font-size: 1.3rem">
+            Créer l'article
+        </button>
+    </div>
   </form>
 </div>
 
